@@ -71,4 +71,6 @@ https://www.youtube.com/playlist?list=PLOU2XLYxmsIJ7dsVN4iRuA7BT8XHzGtCr
 # Firestore youtube playlist
 https://www.youtube.com/playlist?list=PLl-K7zZEsYLluG5MCVEzXAQ7ACZBCuZgZ
 
+Next Tuto : https://codelabs.developers.google.com/codelabs/friendlyeats-flutter?hl=en#0
+
 

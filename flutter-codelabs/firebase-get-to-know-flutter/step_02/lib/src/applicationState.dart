@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:gtk_flutter/src/attending.dart';
 import 'package:gtk_flutter/src/authentication.dart';
 import 'package:gtk_flutter/src/guestBookMassage.dart';
 
@@ -15,9 +16,19 @@ class ApplicationState extends ChangeNotifier {
   Future<void> init() async {
     await Firebase.initializeApp();
 
+    FirebaseFirestore.instance
+        .collection('attendees')
+        .where('attending', isEqualTo: true)
+        .snapshots()
+        .listen((snapshot) {
+      _attendees = snapshot.docs.length;
+      notifyListeners();
+    });
+
     FirebaseAuth.instance.userChanges().listen((user) {
       if (user != null) {
         _loginState = ApplicationLoginState.loggedIn;
+
         _guestBookSubscription = FirebaseFirestore.instance
             .collection('guestbook')
             .orderBy('timestamp', descending: true)
@@ -32,29 +43,64 @@ class ApplicationState extends ChangeNotifier {
               ),
             );
           });
+
+          _attendingSubscription = FirebaseFirestore.instance
+              .collection('attendees')
+              .doc(user.uid)
+              .snapshots()
+              .listen((snapshot) {
+            if (snapshot.data() != null) {
+              if (snapshot.data()['attending']) {
+                _attending = Attending.yes;
+              } else {
+                _attending = Attending.no;
+              }
+            } else {
+              _attending = Attending.unknown;
+            }
+            notifyListeners();
+          });
+
           notifyListeners();
         });
       } else {
         _loginState = ApplicationLoginState.loggedOut;
         _guestBookMessages = [];
         _guestBookSubscription?.cancel();
+        _attendingSubscription?.cancel();
       }
       notifyListeners();
     });
   }
 
   ApplicationLoginState _loginState;
+  String _email;
+  List<GuestBookMessage> _guestBookMessages = [];
+  int _attendees = 0;
+  Attending _attending = Attending.unknown;
+  StreamSubscription<QuerySnapshot> _guestBookSubscription;
+  StreamSubscription<DocumentSnapshot> _attendingSubscription;
 
   ApplicationLoginState get loginState => _loginState;
 
-  String _email;
-
   String get email => _email;
 
-  StreamSubscription<QuerySnapshot> _guestBookSubscription;
-  List<GuestBookMessage> _guestBookMessages = [];
-
   List<GuestBookMessage> get guestBookMessages => _guestBookMessages;
+
+  int get attendees => _attendees;
+
+  Attending get attending => _attending;
+
+  set attending(Attending attending) {
+    final userDoc = FirebaseFirestore.instance
+        .collection('attendees')
+        .doc(FirebaseAuth.instance.currentUser.uid);
+    if (attending == Attending.yes) {
+      userDoc.set({'attending': true});
+    } else {
+      userDoc.set({'attending': false});
+    }
+  }
 
   void startLoginFlow() {
     _loginState = ApplicationLoginState.emailAddress;
