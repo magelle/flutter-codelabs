@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/PluginCodelab/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/PluginCodelab/build" />
+      <excludeFolder url="file://$MODULE_DIR$/PluginCodelab/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/PluginCodelab/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/add_flutter_to_android_app/add_flutter_to_android/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/add_flutter_to_android_app/add_flutter_to_android/build" />
+      <excludeFolder url="file://$MODULE_DIR$/firebase-get-to-know-flutter/step_02/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/firebase-get-to-know-flutter/step_02/build" />
+      <excludeFolder url="file://$MODULE_DIR$/firebase-get-to-know-flutter/step_04/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/firebase-get-to-know-flutter/step_04/build" />
+      <excludeFolder url="file://$MODULE_DIR$/firebase-get-to-know-flutter/step_05/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/firebase-get-to-know-flutter/step_05/build" />
+      <excludeFolder url="file://$MODULE_DIR$/firebase-get-to-know-flutter/step_06/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/firebase-get-to-know-flutter/step_06/build" />
+      <excludeFolder url="file://$MODULE_DIR$/firebase-get-to-know-flutter/step_07/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/firebase-get-to-know-flutter/step_07/build" />
+      <excludeFolder url="file://$MODULE_DIR$/firebase-get-to-know-flutter/step_09/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/firebase-get-to-know-flutter/step_09/build" />
+      <excludeFolder url="file://$MODULE_DIR$/startup_namer/step1_base/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/startup_namer/step1_base/build" />
+      <excludeFolder url="file://$MODULE_DIR$/startup_namer/step2_use_package/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/startup_namer/step2_use_package/build" />
+      <excludeFolder url="file://$MODULE_DIR$/startup_namer/step3_stateful_widget/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/startup_namer/step3_stateful_widget/build" />
+      <excludeFolder url="file://$MODULE_DIR$/startup_namer/step4_infinite_list/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/startup_namer/step4_infinite_list/build" />
+      <excludeFolder url="file://$MODULE_DIR$/startup_namer/step5_add_icons/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/startup_namer/step5_add_icons/build" />
+      <excludeFolder url="file://$MODULE_DIR$/startup_namer/step6_add_interactivity/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/startup_namer/step6_add_interactivity/build" />
+      <excludeFolder url="file://$MODULE_DIR$/startup_namer/step7_navigate_route/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/startup_namer/step7_navigate_route/build" />
+      <excludeFolder url="file://$MODULE_DIR$/startup_namer/step8_themes/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/startup_namer/step8_themes/build" />
+      <excludeFolder url="file://$MODULE_DIR$/testing_codelab/step_03/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/testing_codelab/step_03/build" />
+      <excludeFolder url="file://$MODULE_DIR$/testing_codelab/step_04/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/testing_codelab/step_04/build" />
+      <excludeFolder url="file://$MODULE_DIR$/testing_codelab/step_05/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/testing_codelab/step_05/build" />
+      <excludeFolder url="file://$MODULE_DIR$/testing_codelab/step_06/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/testing_codelab/step_06/build" />
+      <excludeFolder url="file://$MODULE_DIR$/testing_codelab/step_07/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/testing_codelab/step_07/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
