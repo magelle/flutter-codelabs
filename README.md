@@ -16,3 +16,7 @@ https://www.youtube.com/playlist?list=PLOU2XLYxmsIJ7dsVN4iRuA7BT8XHzGtCr
 https://www.youtube.com/playlist?list=PLl-K7zZEsYLluG5MCVEzXAQ7ACZBCuZgZ
 
 Next Tuto : https://codelabs.developers.google.com/codelabs/friendlyeats-flutter?hl=en#0
+
+# Flutter component Gallery
+
+https://flutter.dev/docs/development/ui/widgets/material
