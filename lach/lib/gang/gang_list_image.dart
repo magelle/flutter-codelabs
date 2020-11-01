@@ -1,11 +1,12 @@
 
-import 'package:flutter/cupertino.dart';
 
-class GroupListImage extends StatelessWidget {
+import 'package:flutter/material.dart';
+
+class GangListImage extends StatelessWidget {
   String imageUrl;
 
 
-  GroupListImage(String imageUrl) {
+  GangListImage(String imageUrl) {
     this.imageUrl = imageUrl;
   }
 
