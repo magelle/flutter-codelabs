@@ -13,7 +13,7 @@ class GangList extends StatelessWidget {
         .toList();
 
     return Scaffold(
-      appBar: buildAppBar(),
+      appBar: buildAppBar(context),
       body: ListView(children: gangs),
     );
   }

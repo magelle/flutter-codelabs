@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lach/gang/gang_form.dart';
 import 'package:lach/gang/gang_list.dart';
 
 void main() {

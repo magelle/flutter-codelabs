@@ -18,3 +18,5 @@ samples, guidance on mobile development, and a full API reference.
 ## Some commands
 
 Update the icon : `flutter pub run flutter_launcher_icons:main`
+
+## Kata inspired by : https://github.com/Karumi/KataSuperHeroesAndroid

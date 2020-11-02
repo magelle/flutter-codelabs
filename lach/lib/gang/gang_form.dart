@@ -1,59 +1,51 @@
 import 'package:flutter/material.dart';
+import 'package:lach/gang/gang_list.dart';
 
 class GangForm extends StatelessWidget {
+  final int gangId;
+
+  GangForm(this.gangId);
+
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('My Form'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('My Gang'),
         actions: <Widget>[
-          new IconButton(icon: const Icon(Icons.save), onPressed: () {})
+          IconButton(
+            icon: Icon(Icons.save),
+            onPressed: () =>
+                Navigator.pop(context),
+          ),
         ],
       ),
-      body: new Column(
+      body: Column(
         children: <Widget>[
-          new ListTile(
-            leading: const Icon(Icons.person),
-            title: new TextField(
-              decoration: new InputDecoration(
-                hintText: "Name",
+          ListTile(
+            leading: const Icon(Icons.group),
+            title: TextField(
+              decoration: InputDecoration(
+                hintText: "Gang Name",
               ),
             ),
           ),
-          new ListTile(
-            leading: const Icon(Icons.phone),
-            title: new TextField(
-              decoration: new InputDecoration(
-                hintText: "Phone",
-              ),
-            ),
+          ListTile(
+            leading: const Icon(Icons.photo),
+            title: Text('Soon coming ...'),
           ),
-          new ListTile(
-            leading: const Icon(Icons.email),
-            title: new TextField(
-              decoration: new InputDecoration(
-                hintText: "Email",
+          ListTile(
+            leading: const Icon(Icons.article),
+            title: TextField(
+              keyboardType: TextInputType.multiline,
+              maxLines: 5,
+              decoration: InputDecoration(
+                hintText: "Gang description",
               ),
             ),
           ),
           const Divider(
             height: 1.0,
           ),
-          new ListTile(
-            leading: const Icon(Icons.label),
-            title: const Text('Nick'),
-            subtitle: const Text('None'),
-          ),
-          new ListTile(
-            leading: const Icon(Icons.today),
-            title: const Text('Birthday'),
-            subtitle: const Text('February 20, 1980'),
-          ),
-          new ListTile(
-            leading: const Icon(Icons.group),
-            title: const Text('Contact group'),
-            subtitle: const Text('Not specified'),
-          )
         ],
       ),
     );
