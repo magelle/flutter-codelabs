@@ -28,3 +28,50 @@ https://flutter.dev/docs/development/ui/widgets/material
 
 https://flutterawesome.com/
 
+## Notes
+
+### Widgets
+
+#### Layout
+
+- Container
+- Row
+- Column
+
+Column and row have mainAxisAlignment and cross AxisAlignment.
+
+Container : custom style and alignment 
+
+Row / Column when widget sits to next others
+
+#### Row / Column children
+
+- flexible
+- expanded
+
+#### Content Container
+
+- Stack
+- Card
+
+#### Repeat Elements
+
+- ListView
+  - Constructors : List of children or a builder
+  - Rendering is optimized with builder
+- GridView
+- ListTile
+
+#### Content Types
+
+- Text
+- Image
+- Icon
+
+#### User input
+
+- TextField
+- RaisedButton / FlatButton
+- GestureDetector
+- InkWell
+
