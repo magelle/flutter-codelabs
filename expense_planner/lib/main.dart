@@ -1,4 +1,5 @@
 import 'package:expense_planner/models/transaction.dart';
+import 'package:expense_planner/widgets/chart.dart';
 import 'package:expense_planner/widgets/new_transaction.dart';
 import 'package:expense_planner/widgets/transation_list.dart';
 import 'package:flutter/material.dart';
@@ -35,14 +36,20 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final List<Transaction> _userTransactions = [
-    Transaction(
-        id: 't1', title: 'new shoes', amount: 69.99, date: DateTime.now()),
-    Transaction(
-        id: 't2',
-        title: 'Wheekly groceries',
-        amount: 16.53,
-        date: DateTime.now())
+    // Transaction(
+    //     id: 't1', title: 'new shoes', amount: 69.99, date: DateTime.now()),
+    // Transaction(
+    //     id: 't2',
+    //     title: 'Wheekly groceries',
+    //     amount: 16.53,
+    //     date: DateTime.now())
   ];
+
+  List<Transaction> get _recentTransactions {
+    return _userTransactions
+        .where((e) => e.date.isAfter(DateTime.now().subtract(Duration(days: 7))))
+        .toList();
+  }
 
   void _addNewTransaction(String txTitle, double txAmount) {
     final newTx = Transaction(
@@ -86,11 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
             children: [
               Container(
                 width: double.infinity,
-                child: Card(
-                  color: Colors.blue,
-                  child: Text('coucou xD :p'),
-                  elevation: 5,
-                ),
+                child: Chart(_recentTransactions),
               ),
               TransactionList(_userTransactions)
             ],
