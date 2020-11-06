@@ -19,7 +19,8 @@ class MyApp extends StatelessWidget {
                 title: TextStyle(
                     fontFamily: 'OpenSans',
                     fontWeight: FontWeight.bold,
-                    fontSize: 18)),
+                    fontSize: 18),
+                button: TextStyle(color: Colors.white)),
             appBarTheme: AppBarTheme(
                 textTheme: ThemeData.light().textTheme.copyWith(
                     title: TextStyle(
@@ -47,16 +48,17 @@ class _MyHomePageState extends State<MyHomePage> {
 
   List<Transaction> get _recentTransactions {
     return _userTransactions
-        .where((e) => e.date.isAfter(DateTime.now().subtract(Duration(days: 7))))
+        .where(
+            (e) => e.date.isAfter(DateTime.now().subtract(Duration(days: 7))))
         .toList();
   }
 
-  void _addNewTransaction(String txTitle, double txAmount) {
+  void _addNewTransaction(String txTitle, double txAmount, DateTime choosenDate) {
     final newTx = Transaction(
         id: DateTime.now().toString(),
         title: txTitle,
         amount: txAmount,
-        date: DateTime.now());
+        date: choosenDate);
 
     setState(() {
       this._userTransactions.add(newTx);
