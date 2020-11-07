@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:expense_planner/widgets/adapdive_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -39,7 +42,9 @@ class _NewTransactionState extends State<NewTransaction> {
       var enteredTitle = _titleController.text;
       var enteredAmount = double.parse(_amountController.text);
 
-      if (enteredTitle.isEmpty || enteredAmount <= 0 || _seletectedDate == null) {
+      if (enteredTitle.isEmpty ||
+          enteredAmount <= 0 ||
+          _seletectedDate == null) {
         return;
       }
 
@@ -52,10 +57,15 @@ class _NewTransactionState extends State<NewTransaction> {
       child: Card(
         elevation: 5,
         child: Container(
-          padding: EdgeInsets.only(top: 10, left: 10, right: 10, bottom: MediaQuery.of(context).viewInsets.bottom + 10),
+          padding: EdgeInsets.only(
+              top: 10,
+              left: 10,
+              right: 10,
+              bottom: MediaQuery.of(context).viewInsets.bottom + 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
+              // CupertinoTextField(...)
               TextField(
                 controller: this._titleController,
                 onSubmitted: (_) => submitData(),
@@ -78,12 +88,7 @@ class _NewTransactionState extends State<NewTransaction> {
                           ? 'No date choosen'
                           : 'Picked Date ${DateFormat.yMd().format(_seletectedDate)}'),
                     ),
-                    FlatButton(
-                        onPressed: _presentDatePicker,
-                        child: Text(
-                          'Choose Date',
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        )),
+                    AdaptiveFlatButton('Choose Date', _presentDatePicker),
                   ],
                 ),
               ),
