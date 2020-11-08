@@ -19,6 +19,27 @@ class _NewTransactionState extends State<NewTransaction> {
   final _amountController = TextEditingController();
   DateTime _seletectedDate;
 
+
+  @override
+  void initState() {
+    print('initState()');
+    super.initState();
+  }
+
+
+  @override
+  void didUpdateWidget(NewTransaction oldWidget) {
+    print('didUpdateWidget()');
+    super.didUpdateWidget(oldWidget);
+  }
+
+
+  @override
+  void dispose() {
+    print('dispose()');
+    super.dispose();
+  }
+
   void _presentDatePicker() {
     showDatePicker(
             context: context,
