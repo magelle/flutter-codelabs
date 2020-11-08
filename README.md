@@ -30,6 +30,8 @@ https://flutterawesome.com/
 
 ## Notes
 
+Formation files : https://github.com/PacktPublishing/Learn-Flutter-and-Dart-to-Build-iOS-and-Android-Apps
+
 ### Widgets
 
 #### Layout
