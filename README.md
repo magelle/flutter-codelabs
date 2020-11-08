@@ -75,3 +75,12 @@ Row / Column when widget sits to next others
 - GestureDetector
 - InkWell
 
+
+
+### Widget tree & element tree
+
+| Widget tree                                                  | Element Tree                                       | Render tree                                       |
+| ------------------------------------------------------------ | -------------------------------------------------- | ------------------------------------------------- |
+| configuration (rebuild frequently)                           | Link widgets with redered objects (rarely rebuils) | rendered objects on the screen ( rarely rebuilds) |
+| Container (<br />  Column(<br />Stateless()<br />Statefull ()<br />)<br />) | Container element                                  | Rendered box                                      |
+
