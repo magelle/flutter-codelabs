@@ -84,3 +84,8 @@ Row / Column when widget sits to next others
 | configuration (rebuild frequently)                           | Link widgets with redered objects (rarely rebuils) | rendered objects on the screen ( rarely rebuilds) |
 | Container (<br />  Column(<br />Stateless()<br />Statefull ()<br />)<br />) | Container element                                  | Rendered box                                      |
 
+### Widget lifecycle
+
+Stateless : Constructor -> build
+
+Statefull : Constructor -> initState() -> build() -> setState() -> didUpdateWidget() -> build()
