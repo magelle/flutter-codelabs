@@ -89,3 +89,11 @@ Row / Column when widget sits to next others
 Stateless : Constructor -> build
 
 Statefull : Constructor -> initState() -> build() -> setState() -> didUpdateWidget() -> build()
+
+### App life cycle
+
+- inactive
+- paused
+- resumed
+- suspending
+
