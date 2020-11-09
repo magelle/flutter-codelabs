@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:meals/dummy_data.dart';
 import 'package:meals/models/meal.dart';
 import 'package:meals/widgets/meal_item.dart';
 
 class CategoryMealsScreen extends StatefulWidget {
   static final routeName = '/category-meals';
+  final List<Meal> _availableMeals;
+
+  CategoryMealsScreen(this._availableMeals);
 
   @override
   _CategoryMealsScreenState createState() => _CategoryMealsScreenState();
@@ -24,14 +26,12 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
   @override
   void didChangeDependencies() {
     if (!_loadedInitDate) {
-      final routeArgs = ModalRoute
-          .of(context)
-          .settings
-          .arguments as Map<String, String>;
+      final routeArgs =
+          ModalRoute.of(context).settings.arguments as Map<String, String>;
 
       final categoryId = routeArgs['id'];
       _categoryTitle = routeArgs['title'];
-      _displayedMeals = DUMMY_MEALS
+      _displayedMeals = widget._availableMeals
           .where((meal) => meal.categories.contains(categoryId))
           .toList();
       _loadedInitDate = true;
@@ -40,7 +40,6 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: Text(_categoryTitle),
