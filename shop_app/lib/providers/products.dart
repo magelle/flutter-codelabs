@@ -72,7 +72,8 @@ class Products with ChangeNotifier {
 
   Future<void> addProduct(Product product) {
     const firebaseUrl = 'https://flutter-learning-e5c41.firebaseio.com/';
-    const url = firebaseUrl + '/products.json';
+    const url = firebaseUrl + '/products';
+    print('products : saving');
     return http
         .post(url,
             body: json.encode({
@@ -93,6 +94,9 @@ class Products with ChangeNotifier {
       _items.add(newProduct);
       // _items.insert(0, newProduct); // at the start of the list
       notifyListeners();
+    }).catchError((error) {
+      print(error);
+      throw error;
     });
   }
 
