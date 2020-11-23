@@ -44,6 +44,7 @@ class Products with ChangeNotifier {
     try {
       final response = await http.get(url);
       var extractedData = json.decode(response.body) as Map<String, dynamic>;
+      if(extractedData == null) return;
       _items = extractedData.keys.map((key) {
         var value = extractedData[key];
         return new Product(
